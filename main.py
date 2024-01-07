@@ -3,9 +3,10 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackContext
 # import test
 
-import AllAPI
+
 from test2 import give_it_out
 from datetime import datetime
+from AllAPI import *
 
 TOKEN: Final = "6518477245:AAH9xy4VL3QChqvXV67rPTUKMuBFmiAqyuQ"
 BOT_USERNAME: Final = "@dailybites_bot"
@@ -30,7 +31,7 @@ async def meaning_command(update: Update, context: CallbackContext) -> None:
 
     if word:
         # Run your function to get the meaning (replace with your logic)
-        meaning = get_word_definition(word, AllAPI.API)
+        meaning = get_word_definition(word, API)
 
         # Send the meaning back to the user
         await update.message.reply_text(f'The meaning of "{word}" is:\n{meaning}')
