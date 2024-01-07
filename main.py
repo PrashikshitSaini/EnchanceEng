@@ -22,6 +22,20 @@ async def dailybite_command(update: Update, context:ContextTypes.DEFAULT_TYPE):
 async def help_command(update: Update, context:ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Use the daily bite command to get your daily bites.")
 
+
+async def meaning_command(update: Update, context: CallbackContext) -> None:
+    # Extract the word from the command
+    word = context.args[0] if context.args else None
+
+    if word:
+        # Run your function to get the meaning (replace with your logic)
+        meaning = get_word_definition(word, AllAPI.API)
+
+        # Send the meaning back to the user
+        await update.message.reply_text(f'The meaning of "{word}" is:\n{meaning}')
+    else:
+        await update.message.reply_text('Please provide a word. Example: /meaning apple')
+
 # Responses
 def handle_responses(text: str)->str:
     beautify: str = text.lower()
@@ -64,6 +78,7 @@ if __name__ == '__main__':
     app.add_handler(CommandHandler('start', start_command))
     app.add_handler(CommandHandler('help', help_command))
     app.add_handler(CommandHandler('dailybite', dailybite_command))
+    app.add_handler(CommandHandler('meaning', meaning_command))
 
 
     # Messages
