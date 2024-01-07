@@ -175,4 +175,4 @@ def give_it_out() -> str:
 
     return result_string
 
-print(give_it_out())
+
