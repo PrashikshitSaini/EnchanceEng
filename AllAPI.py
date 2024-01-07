@@ -61,7 +61,7 @@ def get_word_definition(word, api_key):
         return f"Error fetching data from Wordnik API: {e}"
 
 # Replace 'YOURAPIKEY' with your actual Wordnik API key
-get_word_definition(word, API)
+
 
 def display_idioms(idioms, entry_number):
     with open(idioms, 'r') as file:
