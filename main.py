@@ -3,6 +3,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackContext
 # import test
 
+import AllAPI
 from test2 import give_it_out
 from datetime import datetime
 
