@@ -24,7 +24,7 @@ def get_motivating_quote_from_file():
     quote = give_out_quote()
     return quote
 
-word = input("Insert the word: ")
+
 
 
 def get_word_definition(word, api_key):
@@ -52,15 +52,13 @@ def get_word_definition(word, api_key):
             definition = first_meaning.get('text', '')
 
             # Display the result
-            print(f"Word: {word}")
-            print(f"Part of Speech: {part_of_speech}")
-            print(f"Definition: {definition}")
+            return definition
 
         else:
-            print(f"No definitions found for the word: {word}")
+            return f"No definitions found for the word: {word}"
 
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching data from Wordnik API: {e}")
+        return f"Error fetching data from Wordnik API: {e}"
 
 # Replace 'YOURAPIKEY' with your actual Wordnik API key
 get_word_definition(word, API)
