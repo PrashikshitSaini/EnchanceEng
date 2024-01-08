@@ -7,7 +7,7 @@ from quote import give_out_quote
 
 i = 1
 today_date = datetime.now()
-yester_date = today_date - timedelta(days=3)
+yester_date = today_date - timedelta(days=300)
 final_date = yester_date.strftime("%Y-%m-%d")
 
 
