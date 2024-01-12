@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import random
 from quote import give_out_quote
 
-i = random.randint(1, 128)
+
 today_date = datetime.now()
 yester_date = today_date - timedelta(days=300)
 final_date = yester_date.strftime("%Y-%m-%d")
@@ -81,7 +81,7 @@ def display_idioms(idioms, entry_number):
         return f"Idiom: {idiom}\nMeaning: {meaning}\nSentence: {sentence}"
 
 
-
+i= random.randint(1, 128)
 def give_it_out() -> str:
     global i
     output_buffer = io.StringIO()
