@@ -160,7 +160,7 @@ def give_it_out() -> str:
             output_buffer.write(f"\n**Idiom to Embrace:{emoji}**\n")
             idiom_info = display_idioms(idioms=csv_file_path, entry_number=i)
             output_buffer.write(idiom_info)
-            i += 1
+           
 
         else:
             output_buffer.write(f"Error: {response.status_code}, {response.text}\n")
