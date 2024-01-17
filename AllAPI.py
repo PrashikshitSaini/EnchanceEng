@@ -83,7 +83,7 @@ def display_idioms(idioms, entry_number):
 
 
 def give_it_out() -> str:
-    i = random.randint(1, 128)
+    i = random.randint(25, 128)
     output_buffer = io.StringIO()
 
     try:
