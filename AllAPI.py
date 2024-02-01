@@ -4,7 +4,6 @@ import csv
 from datetime import datetime, timedelta
 import random
 from quote import give_out_quote
-import easy_word as ez
 
 
 today_date = datetime.now()
@@ -146,16 +145,16 @@ def give_it_out() -> str:
             motivating_quote = get_motivating_quote_from_file()
             output_buffer.write(motivating_quote)
 
-            # data = response.json()
-            # word = data['word']
-            # meaning = data['definitions'][0]['text']
-            # sentence = data['examples'][1]['text']
+            data = response.json()
+            word = data['word']
+            meaning = data['definitions'][0]['text']
+            sentence = data['examples'][1]['text']
 
-            # emoji = random.choice(emojis)
-            # output_buffer.write(f"\n\n**Word to ponder:**{emoji}\n**{word}**\n")
-            # output_buffer.write(f"Meaning: {meaning}\n")
-            # output_buffer.write(f"Sentence: {sentence}\n")
-            ez()
+            emoji = random.choice(emojis)
+            output_buffer.write(f"\n\n**Word to ponder:**{emoji}\n**{word}**\n")
+            output_buffer.write(f"Meaning: {meaning}\n")
+            output_buffer.write(f"Sentence: {sentence}\n")
+            
 
             emoji = random.choice(emojis)
             csv_file_path = 'idioms.csv'
